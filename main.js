@@ -189,7 +189,7 @@
             name: "Espresso",
             cash: "10",
             coins: "25",
-            img: "../images/espresso1.png"
+            img: "../images/espresso1.png" 
         },
 
         {
