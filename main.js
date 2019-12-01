@@ -189,56 +189,56 @@
             name: "Espresso",
             cash: "10",
             coins: "25",
-            img: "/images/espresso1.png"
+            img: "../images/espresso1.png"
         },
 
         {
             name: "Americano",
             cash: "11",
             coins: "00",
-            img: "/images/americano1.png"
+            img: "../images/americano1.png"
         },
 
         {
             name: "Latte",
             cash: "14",
             coins: "75",
-            img: "/images/latte1.png"
+            img: "../images/latte1.png"
         },
 
         {
             name: "Cappuccino",
             cash: "12",
             coins: "50",
-            img: "/images/cappuchino1.png"
+            img: "../images/cappuchino1.png"
         },
 
         {
             name: "Mochaccino",
             cash: "10",
             coins: "00",
-            img: "/images/maccihiato1.png"
+            img: "../images/maccihiato1.png"
         },
 
         {
             name: "Tea",
             cash: "9",
             coins: "50",
-            img: "/images/tea1.png"
+            img: "../images/tea1.png"
         },
 
         {
             name: "Chocolate",
             cash: "10",
             coins: "25",
-            img: "/images/chocolate1.png"
+            img: "../images/chocolate1.png"
         },
 
         {
             name: "Cocoa",
             cash: "12",
             coins: "00",
-            img: "/images/cocoa1.png"
+            img: "../images/cocoa1.png"
         }
     ];
     const coffeeListContainer = document.getElementById('coffee-list');
@@ -272,7 +272,7 @@
         machine.addCoins(currentCoins);
     });
 
-    
+
     $('#coffee-list').on('click', '.item', function () {
         const name = $(this).data('name')
         machine.createCoffee(name);
