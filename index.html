@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="avtomat-wrap">
+        <div class="prompt cash">
+            <div class="close"></div>
+            <h3>Введите номинал купюры</h3>
+            <input сlass="input-cash" id="input-cash" type="text" placeholder="1, 2, 5, 10">
+            <button class="promt-btn">Enter</button>
+        </div>
+        <div class="prompt coins">
+            <div class="close"></div>
+            <h3>Введите номинал монеты</h3>
+            <input сlass="input-coins" id="input-coins" type="text" placeholder="25, 50, 1, 2">
+            <button class="promt-btn">Enter</button>
+        </div>
+        <div class="prompt rest">
+            <h3>Ваша сдача</h3>
+            <div class="promt-body prompt-rest">
+                <p class="rest-container"></p>
+                <button class="promt-btn">Ok</button>
+            </div>
+        </div>
+        <div class="avtomat">
+           
+            <div class="avtomat-body">
+                <div class="avtomat-left">
+                  <h1>Coffee Machine</h1>
+                  <ul id="coffee-list"></ul>
+                  <div class="finish"></div>
+                </div> 
+                <div class="avtomat-right">
+                    <div class="balance">
+                        <p>Balance</p>
+                        <div id="count">
+                            <span class="balance-cash"></span>
+                            <span class="balance-coins"></span>
+                            <div class="progress"></div>
+                        </div>
+                    </div>
+                    <div class="money-accepts">
+                        <div class="cash-accept">
+                            <span></span>
+                        </div>
+                        <div class="coins-accept">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="rest-popup">
+                        rest
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    <script src="/main.js"></script>
+</body>
+
+</html>
