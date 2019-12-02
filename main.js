@@ -78,7 +78,7 @@
             }
             const drinkCost = drinkCash + drinkCoins;
             console.log(drinkCost)
-            const currentBalance = this.currentMoney + this.currentCoins;
+            let currentBalance = this.currentMoney + this.currentCoins;
             console.log(currentBalance)
             const restInput = currentBalance - drinkCost;
             let rest = currentBalance - drinkCost;
@@ -172,10 +172,38 @@
                 console.log(rest);
 
                 if (restInput > 0) {
-                   confirm('Ваша сдача: ' + JSON.stringify(this.coinsRest))
-                }
+                    // let restValueContainer = $('#rest-value');
+                    // console.log(restValueContainer);
+                    // $.each(this.coinsRest, function( key, value ) {
+                    //     if(value > 1 && key > 2) {
+                    //         restValueContainer.append($('<li>',{text:`${value} ед. по ${key} коп.`}))
+                    //         // ( `<li>${value} ед. по ${key} коп.</li>`);
 
-                this.makingCoffee(drinkItem)
+                    //     }
+                    //     else if (value > 1) {
+                    //         restValueContainer.append( `<li>${value} ед. по ${key} грн.</li>`);
+                    //     }
+                    // });
+                    confirm("Ваша сдача:" + JSON.stringify(this.coinsRest))
+                } 
+                this.makingCoffee(drinkItem);
+                this.currentMoney = 0;
+                this.currentCoins = 0;
+               
+
+                $('.finish').click(function() {
+                    $('.finish-img').css('visibility', 'hidden')
+
+                    if (restInput > 0) {
+                        this.coinsRest = {
+                            2: 0,
+                            1: 0,
+                            50: 0,
+                            25: 0
+                        }
+                    }
+                    console.log(this.coinsRest)
+                })
 
             }
             else {
