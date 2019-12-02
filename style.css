@@ -168,6 +168,7 @@ h1 {
 }
 
 .finish {
+    cursor: pointer;
     overflow: hidden;
     position: relative;
     width: 150px;

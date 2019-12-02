@@ -172,42 +172,37 @@
                 console.log(rest);
 
                 if (restInput > 0) {
-                    // let restValueContainer = $('#rest-value');
-                    // console.log(restValueContainer);
-                    // $.each(this.coinsRest, function( key, value ) {
-                    //     if(value > 1 && key > 2) {
-                    //         restValueContainer.append($('<li>',{text:`${value} ед. по ${key} коп.`}))
-                    //         // ( `<li>${value} ед. по ${key} коп.</li>`);
+                    const restArr = []
+                    $.each(this.coinsRest, function (key, value) {
+                        // restArr.push(`${value} ед. по ${key} коп.`)
+                        if (value > 0 && key > 2) {
+                            restArr.push(`${value} ед. по ${key} коп. \r\n`)
+                        }
+                        else if (value > 0) {
+                            restArr.push(`${value} ед. по ${key} грн. \r\n`)
+                        }
+                    });
+                    confirm(`Ваша сдача: ${restInput} грн.\r\n${restArr.join("")}`)
 
-                    //     }
-                    //     else if (value > 1) {
-                    //         restValueContainer.append( `<li>${value} ед. по ${key} грн.</li>`);
-                    //     }
-                    // });
-                    confirm("Ваша сдача:" + JSON.stringify(this.coinsRest))
-                } 
+                    this.coinsRest = {
+                        2: 0,
+                        1: 0,
+                        50: 0,
+                        25: 0
+                    }
+                }
+
                 this.makingCoffee(drinkItem);
                 this.currentMoney = 0;
                 this.currentCoins = 0;
-               
 
-                $('.finish').click(function() {
+
+                $('.finish').click(function () {
                     $('.finish-img').css('visibility', 'hidden')
-
-                    if (restInput > 0) {
-                        this.coinsRest = {
-                            2: 0,
-                            1: 0,
-                            50: 0,
-                            25: 0
-                        }
-                    }
-                    console.log(this.coinsRest)
                 })
-
             }
             else {
-                alert(`Недостаточно средств для покупки ${drinkItem.name}. Пожалуйста добавьте еще ${Math.abs(rest)}`)
+                alert(`Недостаточно средств для покупки ${drinkItem.name}. Пожалуйста добавьте еще ${Math.abs(rest)} грн.`)
             }
 
         }
@@ -217,7 +212,7 @@
             name: "Espresso",
             cash: "10",
             coins: "25",
-            img: "../images/espresso1.png" 
+            img: "../images/espresso1.png"
         },
 
         {
@@ -282,14 +277,14 @@
         $('.prompt.cash').addClass('active');
 
     })
+
+
     $('.prompt.cash .promt-btn').click(function () {
         const currentMoneyValue = $('#input-cash').val();
         const currentMoney = parseInt(currentMoneyValue);
         machine.addCash(currentMoney);
         $('#input-cash').val('');
     });
-
-
 
     $('.coins-accept').click(function () {
         $('.prompt.coins').addClass('active');
